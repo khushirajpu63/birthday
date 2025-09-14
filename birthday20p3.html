@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Slideshow</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #87CEEB, #4682B4);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            margin: 40px auto;
+            border: 10px solid #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .slides {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            /* Adjust the height as needed */
+        }
+
+        .slides img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slides img.active {
+            display: block;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="pooja.jpg" alt="Image 1" class="active">
+            <img src="mahima.jpg" alt="Image 2">
+            <img src="khushi.jpg" alt="Image 3">
+            <!-- Add more images here -->
+        </div>
+        <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="next" onclick="plusSlides(1)">&#10095;</div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByTagName("img");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Autoplay
+        setInterval(() => {
+            plusSlides(1);
+        }, 3000); // Change slide every 3 seconds
+
+        // Popup
+        document.getElementById("popup").classList.add("active");
+        function closePopup() {
+            document.getElementById("popup").classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>

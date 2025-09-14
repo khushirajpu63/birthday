@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            birthday
+        </title>
+        <link rel="stylesheet">
+        <style>
+            body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #d9d2d5;
+        }
+
+        .letter {
+            background: white;
+            width: 500px;
+            height: 600px;
+            top: 10px;
+            left: 10px;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .heart {
+            background-color: red;
+            height: 70px;
+            width: 70px;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            transform: rotate(-45deg);
+            box-shadow: -5px 10px 90px red;
+            animation: untolding 0.6s linear infinite;
+        }
+
+        @keyframes untolding {
+            0% {
+                transform: rotate(-45deg) scale(1.05);
+            }
+
+            70% {
+                transform: rotate(-45deg) scale(1.0);
+            }
+
+            100% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+
+        .heart:before {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background-color: red;
+            top: -40px;
+            border-radius: 50px;
+        }
+
+        .heart:after {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background-color: red;
+            right: -40px;
+            border-radius: 50px;
+        }
+
+        .flower {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: bloom 2s linear infinite;
+        }
+
+        .flower .petal {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-color: #ffc0cb;
+            border-radius: 50%;
+        }
+
+        .flower .petal:nth-child(1) {
+            top: -20px;
+        }
+
+        .flower .petal:nth-child(2) {
+            top: 20px;
+        }
+
+        .flower .petal:nth-child(3) {
+            left: -20px;
+        }
+
+        .flower .petal:nth-child(4) {
+            left: 20px;
+        }
+
+        .flower .center {
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        </style>
+    </head>
+    <body><div class="letter">
+            <div class="heart"></div>
+        <div class="text">
+             <center><a></a>
+             <p style="font-size: x-large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">happiest birthday billu....<br>
+             </p><P style="font-size: large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Tum humesha khush raho or mere sath rho ese hi. I hope yrrr tum jo chahte ho vo sb tumhe milee.. 
+                pata hi nhi chala yrr tumhare sath 3 saal hone ko hai. 
+                teen kya yrr hum humesha ese hi sath rhe bss..<br>
+                thankyouu soooo much yrrrr mujhe jhelne k liye samjhne k liye or 
+                sbse jada main mujhe samjhane k liye chijo ko mujhe glt chijo se bachane k liye
+                bhi yrrr tum jitna jhelte ho utna to koi bhi nhi jhel payega mujhe yrrr...<br>
+                I hope yrrrr tumhare sare dreams pure ho or me bhi usme humesha sath hu tumhare. 
+                unhe tumahre sath celebrate kr sku tumhari khushi me khush ho sku....<br>
+                And last me yahi kahungi... 
+                <p style="font-size: xx-large; font-weight: 800; font-family:Georgia, 'Times New Roman', Times, serif;">
+                    i love youuu sooo sooo much yrrrr</p>
+             </P>
+            </center>
+        </div>
+        </div> 
+    </body>
+</html>
